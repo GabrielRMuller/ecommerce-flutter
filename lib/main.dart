@@ -16,6 +16,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/user_provider.dart';
+import 'package:ecommerce/screen/checkout_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
           Routes.PRODUCT: (_) => ProductDetailScreen(),
           Routes.CART: (_) => CartScreen(),
           Routes.ADDRESS: (_) => AddressScreen(),
+          Routes.CHECKOUT: (_) => CheckoutScreen()
         },
       ),
     );

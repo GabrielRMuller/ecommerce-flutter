@@ -3,6 +3,7 @@ import 'package:ecommerce/widgets/address/address_body.dart';
 import 'package:ecommerce/widgets/address/cep_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ecommerce/utils/routes.dart';
 
 class AddressScreen extends StatelessWidget {
   GlobalKey<FormState> _formKey = new GlobalKey();
@@ -42,6 +43,7 @@ class AddressScreen extends StatelessWidget {
                     ? () {
                         if (_formKey.currentState.validate()) {
                           _formKey.currentState.save();
+                          Navigator.of(context).pushNamed(Routes.CHECKOUT);
                         }
                       }
                     : null,
@@ -53,7 +55,7 @@ class AddressScreen extends StatelessWidget {
                     vertical: 15,
                   ),
                   child: Text(
-                    "CONTINUAR PARA ENDEREÇO",
+                    "FINALIZAR COMPRA",
                     softWrap: false,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.clip,

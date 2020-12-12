@@ -28,9 +28,6 @@ class CartBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          /**
-           *  Preço Total
-           */
           Card(
             child: Padding(
               padding: const EdgeInsets.all(15.0),
@@ -52,10 +49,6 @@ class CartBody extends StatelessWidget {
               ),
             ),
           ),
-
-          /**
-           *  Items
-           */
           ListView.builder(
             shrinkWrap: true,
             itemCount: _cartProvider.items.length,
@@ -66,9 +59,6 @@ class CartBody extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          /**
-           *  Botão de Endereço
-           */
           RaisedButton(
             onPressed: () {
               Navigator.of(context).pushNamed(Routes.ADDRESS);
@@ -81,7 +71,7 @@ class CartBody extends StatelessWidget {
                 vertical: 15,
               ),
               child: Text(
-                "CONTINUAR PARA ENDEREÇO",
+                "FINALIZAR COMPRA",
                 softWrap: false,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.clip,
