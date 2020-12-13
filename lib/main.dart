@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce/providers/cart_provider.dart';
 import 'package:ecommerce/providers/product_provider.dart';
 import 'package:ecommerce/providers/user_provider.dart';
+import 'package:ecommerce/providers/order_provider.dart';
 import 'package:ecommerce/screen/address_screen.dart';
 import 'package:ecommerce/screen/cart_screen.dart';
 import 'package:ecommerce/screen/home_screen.dart';
@@ -53,6 +54,10 @@ class MyApp extends StatelessWidget {
               _cartProvider..updateUser(_userProvider),
           lazy: false,
         ),
+        ChangeNotifierProvider(
+          create: (_) => new OrderProvider(),
+          lazy: false,
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
